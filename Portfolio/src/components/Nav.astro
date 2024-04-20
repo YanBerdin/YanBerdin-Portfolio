@@ -10,7 +10,7 @@ const textLinks: { label: string; href: string }[] = [
   { label: "About", href: "/about/" },
 ];
 
-/** Icon links to social media — edit these with links to your profiles!
+/** Icon links to social media profiles.
  * https://phosphoricons.com/
  */
 const iconLinks: {
@@ -207,7 +207,7 @@ const iconLinks: {
     border: 0;
     border-radius: 999rem;
     padding: 0.5rem;
-    font-size: 1rem; /*1.5*/
+    font-size: 1.5rem;
     color: var(--gray-300);
     background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
     box-shadow: var(--shadow-md);
@@ -243,7 +243,7 @@ const iconLinks: {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    font-size: var(--text-xl); /* (--text-md) */
+    font-size: var(--text-md); /* (--text-md) */
     line-height: 1.2;
     list-style: none;
     padding: 2rem;
@@ -324,7 +324,7 @@ const iconLinks: {
     .nav-items {
       position: relative;
       flex-direction: row;
-      font-size: var(--text-md);
+      font-size: var(--text-sm);
       border-radius: 999rem;
       border: 0;
       padding: 0.5rem 0.5625rem;
@@ -383,6 +383,8 @@ const iconLinks: {
       font-size: var(--icon-size); /* none*/
     }
   }
+
+
   @media (forced-colors: active) {
     .link.active {
       color: SelectedItem;
