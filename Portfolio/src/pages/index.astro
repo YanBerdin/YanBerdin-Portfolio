@@ -40,12 +40,12 @@ const projects = (await getCollection("work"))
             <Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
           </div>
         </Hero>
-        <div class="img-container"> <!-- none -->
+        <div class="img-container">
+          <!-- none -->
           <img
             alt="Yan smiling in a portrait photo."
-            width="436px"
-            height="505"
-            src="/assets/portrait-preview.png"
+            src="/assets/portrait-preview1.png"
+            height="1308"
           />
         </div>
       </header>
@@ -83,7 +83,7 @@ const projects = (await getCollection("work"))
         </div>
       </section>
 
-      <section class="section with-background bg-variant">
+      <!-- <section class="section with-background bg-variant"> 
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Mentions</h3>
           <p>
@@ -108,7 +108,7 @@ const projects = (await getCollection("work"))
               ))
             }
           </Grid>
-        </div>
+        </div> -->
       </section>
     </main>
 
@@ -130,12 +130,13 @@ const projects = (await getCollection("work"))
 
   .hero img {
     /* portrait @media max-width 800px */
-    aspect-ratio: 3 / 4; /* 5/4 */
-    object-fit: cover;
-    object-position: center; /* top */
+    aspect-ratio: 4 / 4; /* 5/4 */
+    /*width: 436px;*/
+    object-fit: fill;
+    /*object-position: center; /* top */
     border-radius: 1.5rem;
     box-shadow: var(--shadow-md);
-    max-width: 40%; /* none */
+    max-width: 200px; /* none */
   }
   .img-container {
     display: flex;
@@ -158,18 +159,16 @@ const projects = (await getCollection("work"))
 
     .hero img {
       /* portrait @media min-width 800px */
-      aspect-ratio: 3 / 4; /* 3/4 */
-      /*border-radius: 100%;*/
-      object-fit: cover;
-      width: 100%;
-      height: auto;;
-      max-width: 60%;
-      min-width: 200px;
+      aspect-ratio: 4 / 4; /* 3/4 */
+      border-radius: 1.5rem;
+      object-fit: fill;
+      max-width: 70%; /* none */
+      min-width: 200px; /* none */
     }
 
     .img-container {
       /* none */
-      justify-content: flex-end;
+      /*justify-content: flex-end;*/
     }
     /* ====================================================== */
 

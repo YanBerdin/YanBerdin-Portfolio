@@ -1,22 +1,79 @@
 ---
-title: Duvet Genius
-publishDate: 2020-03-04 00:00:00
-img: /assets/stock-3.jpg
+title: DiscO'Tech
+publishDate: 2023-09-04 00:00:00
+img: /assets/discotech.png
 img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
 description: |
-  We developed a virtual showcase for the softest bedding imaginable.
+  FrontEnd interface of platform allowing the referencing of all musical genres.
+  Faker API for Démo
 tags:
-  - Design
-  - Dev
-  - Branding
+  - React
+  - REST API
+  - Music
 ---
+##### 🔭 Demo
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+This project hosted at : [https://discotech-git-master-yanberdins-projects.vercel.app/](https://discotech-git-master-yanberdins-projects.vercel.app/)
 
-Integer vitae nibh elit. Suspendisse eget urna eu neque bibendum pharetra. Sed interdum lectus sem, in pulvinar magna dignissim vel. Quisque maximus at urna nec laoreet. Suspendisse potenti. Vestibulum rhoncus sem ut mi pellentesque, in vestibulum erat blandit. Aliquam sodales dui ac maximus consectetur. Duis quis est vehicula, imperdiet nisl nec, fermentum erat. Duis tortor diam, pharetra eu euismod in, vehicula non eros. Curabitur facilisis dui at erat ultrices gravida. In at nunc ultricies, pulvinar mi vel, sagittis mauris. Praesent pharetra posuere purus ac imperdiet. Nulla facilisi.
+BackOffice App/API (Symfony) : [https://github.com/YanBerdin/api-discOtech](https://github.com/YanBerdin/api-discOtech)
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+Interactive, dynamic, and responsive integration of our mockup
 
-Mauris sed eros in ex maximus volutpat. Suspendisse potenti. Donec lacinia justo consectetur sagittis tempor. Proin ullamcorper nisi vitae auctor rhoncus. Sed tristique aliquam augue. Pellentesque vitae fringilla ligula. Nulla arcu elit, efficitur eu nunc malesuada, eleifend tincidunt orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer mattis orci in bibendum ultricies. Quisque a dui erat. Phasellus et vulputate ipsum. Proin metus ex, lobortis nec ornare eget, bibendum ut sapien. Aliquam in dolor lobortis, aliquam tellus a, congue augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+The application has been designed to be responsive. It adapts to different screen sizes to provide an optimal user experience on both mobile devices and desktops.
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+##### `CRUD of data from our external API`
+
+The application uses Axios to retrieve data from the external API. Security measures have been implemented to protect the user's connection to the API, notably by using JWT tokens.
+
+##### `Response to SEO issues`
+
+Although the application was not developed with Server Side Rendering (SSR), SEO issues are taken into account by using semantic HTML tags, ensuring high color contrast, and using informative anchor tags.
+
+##### 👓 `Accessibility`
+
+- Use of semantic HTML tags
+- Informative anchor tags (links)
+- Alt attributes for images
+- High color contrast
+- Flexible font sizes
+- Labels for form elements
+- Testing with assistive tools
+
+##### ⚛️ `React Libraries`
+
+- **Axios**: Used to perform API requests
+- **Bootstrap**: Used for graphic integration in HTML and CSS
+- **NPM**: JavaScript package manager
+- **React-router-dom**: Used to manage routing
+- **Redux**: Centralized state management of data
+- **Slick-carousel**: Component library for creating image carousels
+- **Vite**: Development server and build tool
+- **PropTypes**: Checking the data type of props
+
+##### 🔒 `Security`
+
+##### `Protection against XSS vulnerabilities: Cross-Site Scripting attack`
+
+- Validation of data coming from the user and the server (responses to AJAX requests). Same principle of double-validation as on the server side.
+- Securing forms and data writing methods by synchronization token (random & single-use), whose access is protected by CORS.
+
+##### `Securing the user's connection to the API`
+
+- Creation of a connection variable to the API in the '.env' file
+  - Avoids exposing the URL and versioning without each commit modifying the connection URL
+  - Everyone can define their environment according to their Dev/Prod use
+
+##### `CORS`
+
+- Token approach
+- Use of Axios to add an Interceptor and retrieve / send the JWT
+- The JWT token is retrieved from the localstorage and sent to each of our API requests, avoiding passing the id of the connected user who is already identified in the token.
+- This solution is sometimes criticized for its security risks. Indeed, in case of XSS vulnerabilities, the localstorage is accessible and therefore the token can be retrieved by a pirate. However, in case of XSS vulnerabilities, the state and all entered data are just as recoverable. This is why neither Password nor Login in clear text are stored in the state.
+
+##### `Logout Management`
+
+To manage logout, it is enough to forget the token on the front-end. Remove it from the state or from the Axios configuration when the user expresses the intention to log out.
+
+##### `Protection against CSRF attacks (Cross-Site Request Forgery)`
+
+Our REST API does not use cookies / sessions because it must remain stateless. Without theft of cookies or session, the CSRF attack is very unlikely.
